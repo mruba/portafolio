@@ -14,6 +14,8 @@ import {
   ALL_POSTS_QUERY,
 } from '../components/queries'
 
+import { useQuery } from '@apollo/client'
+import { initializeApollo, addApolloState } from '../graphql/client'
 
 
 interface Iprops {
@@ -21,14 +23,17 @@ interface Iprops {
 }
 
 const Home: NextPage<Iprops> = props => {
+  const {
+    data
+  } = useQuery(ALL_POSTS_QUERY)
   // const { theme, changeTheme } = useTheme();
   return (
     <div className="px-5 py-5">
 
       <div className="space-y-3 bg-blue-light dark:bg-green-light text-center space-y-2 p-6 border-solid border-8 border-white mb-16" >
 
-          <p className="text-white text-xl">hi, my name is</p>
-          <p className="text-green-dark dark:text-pink text-4xl ">Miguel</p>
+        <p className="text-white text-xl">hi, my name is</p>
+        <p className="text-green-dark dark:text-pink text-4xl ">Miguel</p>
 
         {/* <div className="h-40 w-40 m-auto">
           <Image src={profilePic} alt="Picture of the Miguel Rubalcava" />
@@ -75,6 +80,19 @@ Home.defaultProps = {
   menuOptions
 }
 
+export async function getStaticProps() {
+  const apolloClient = initializeApollo()
 
+  await apolloClient.query({
+    query: ALL_POSTS_QUERY,
+  })
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  }
+
+}
 
 export default Home

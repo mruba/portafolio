@@ -1,12 +1,20 @@
-import { ApolloServer, gql } from 'apollo-server-micro'
-import { resolvers, typeDefs } from './schema'
-import { context } from './context'
+import { ApolloServer } from 'apollo-server-micro'
+import { typeDefs, resolvers } from '../../graphql/schema'
+import { context } from '../../graphql/context'
+import { MicroRequest } from 'apollo-server-micro/dist/types'
+import { ServerResponse } from 'http'
 
-const apolloServer = new ApolloServer({ resolvers, typeDefs, context: context })
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+}
+
+const apolloServer = new ApolloServer({ typeDefs, resolvers, context })
 
 const startServer = apolloServer.start()
 
-export default async function handler(req, res) {
+export default async function handler(req: MicroRequest, res: ServerResponse) {
   res.setHeader('Access-Control-Allow-Credentials', 'true')
   res.setHeader(
     'Access-Control-Allow-Origin',
@@ -25,10 +33,4 @@ export default async function handler(req, res) {
   await apolloServer.createHandler({
     path: '/api/graphql',
   })(req, res)
-}
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
 }

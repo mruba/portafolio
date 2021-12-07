@@ -1,6 +1,8 @@
 import {  gql } from 'apollo-server-micro'
 import { DateTimeResolver } from 'graphql-scalars'
 import { Context } from './context'
+import { makeExecutableSchema } from 'graphql-tools'
+
 
 export const typeDefs = gql`
   type Mutation {
@@ -252,3 +254,8 @@ interface UserCreateInput {
   name?: string
   posts?: PostCreateInput[]
 }
+
+export const schema = makeExecutableSchema({
+  typeDefs,
+  resolvers,
+})
