@@ -11,6 +11,7 @@ dependencies:
   micro: 9.3.4
   next: 12.0.4_react-dom@17.0.2+react@17.0.2
   next-themes: 0.0.15_f195614718841b3c14a81ac95268ce58
+  prisma: 3.6.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   use-sound: 4.0.1_react@17.0.2
@@ -21,7 +22,6 @@ devDependencies:
   eslint: 7.32.0
   eslint-config-next: 12.0.4_97474a4dbadaeb5c2c29b7d438fbde20
   postcss: 8.4.4
-  prisma: 3.6.0
   tailwindcss: 2.2.19_6b4e3d148bdcb715d5f821ed0a9c268b
   typescript: 4.5.2
 lockfileVersion: 5.2
@@ -515,7 +515,6 @@ packages:
     resolution:
       integrity: sha512-vtoO2ys6mSfc8ONTWdcYztKN3GBU1tcKBj0aXObyjzSuGwHFcM/pEA0xF+n1W4/0TAJgfoPX2khNEit6g0jtNA==
   /@prisma/engines/3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727:
-    dev: true
     requiresBuild: true
     resolution:
       integrity: sha512-dRClHS7DsTVchDKzeG72OaEyeDskCv91pnZ72Fftn0mp4BkUvX2LvWup65hCNzwwQm5IDd6A88APldKDnMiEMA==
@@ -3403,7 +3402,7 @@ packages:
   /prisma/3.6.0:
     dependencies:
       '@prisma/engines': 3.6.0-24.dc520b92b1ebb2d28dc3161f9f82e875bd35d727
-    dev: true
+    dev: false
     engines:
       node: '>=12.6'
     hasBin: true

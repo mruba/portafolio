@@ -2,15 +2,13 @@ import { gql } from '@apollo/client'
 
 
 export const ALL_POSTS_QUERY = gql`
-  query{
-    posts{
+  query posts{
       content
       createdAt
       id
       published
       title
     }
-  }
 `
 
 export const allPostsQueryVars = {

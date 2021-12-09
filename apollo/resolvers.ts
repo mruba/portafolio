@@ -1,5 +1,5 @@
 import { DateTimeResolver } from 'graphql-scalars'
-import { Context } from '../lib/prisma/context'
+import { Context } from '../prisma/context'
 
 export const resolvers = {
   Query: {

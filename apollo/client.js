@@ -12,7 +12,7 @@ function createIsomorphLink() {
     // const { schema } = require('./schema')
     // const {resolvers} = require('./resolvers')
     // const {typeDefs} = require('./type-defs')
-    const context = require('../lib/prisma/context')
+    const context = require('../prisma/context')
     // console.warn(schema)
     return new SchemaLink({ schema, context })
   } else {
