@@ -15,7 +15,7 @@ import {
 } from '../components/queries'
 
 import { useQuery } from '@apollo/client'
-import { initializeApollo, addApolloState } from '../graphql/client'
+import { initializeApollo, addApolloState } from '../apollo/client'
 
 
 interface Iprops {
