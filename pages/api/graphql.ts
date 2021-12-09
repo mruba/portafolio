@@ -1,8 +1,10 @@
 import { ApolloServer } from 'apollo-server-micro'
-import { typeDefs, resolvers } from '../../graphql/schema'
-import { context } from '../../graphql/context'
+import { resolvers } from '../../apollo/resolvers'
+import { typeDefs } from '../../apollo/type-defs'
+import { context } from '../../lib/prisma/context'
 import { MicroRequest } from 'apollo-server-micro/dist/types'
 import { ServerResponse } from 'http'
+import { schema } from '../../apollo/schema'
 
 export const config = {
   api: {

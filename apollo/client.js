@@ -5,13 +5,8 @@ let apolloClient
 
 function createIsomorphLink() {
   if (typeof window === 'undefined') {
-    // lazy load module nextjs
-
     const { SchemaLink } = require('@apollo/client/link/schema')
     const { schema } = require('./schema')
-    console.log('schema', schema)
-    // const { context } = require('./context')
-
     return new SchemaLink({ schema })
   } else {
     const { HttpLink } = require('@apollo/client/link/http')
@@ -46,15 +41,15 @@ export function initializeApollo(initialState = null) {
   return _apolloClient
 }
 
-export function addApolloState(client, pageProps) {
-  if (pageProps?.props) {
-    pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract()
-  }
-
-  return pageProps
-}
-
 export function useApollo(initialState) {
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }
+
+export function addApolloState(client, pageProps) {
+    if (pageProps?.props) {
+      pageProps.props[APOLLO_STATE_PROP_NAME] = client.cache.extract()
+    }
+  
+    return pageProps
+  }

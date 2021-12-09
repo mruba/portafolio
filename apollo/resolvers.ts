@@ -1,90 +1,21 @@
-import {  gql } from 'apollo-server-micro'
 import { DateTimeResolver } from 'graphql-scalars'
-import { Context } from './context'
-import { makeExecutableSchema } from 'graphql-tools'
-
-
-export const typeDefs = gql`
-  type Mutation {
-    createDraft(authorEmail: String!, data: PostCreateInput!): Post
-    deletePost(id: Int!): Post
-    incrementPostViewCount(id: Int!): Post
-    signupUser(data: UserCreateInput!): User!
-    togglePublishPost(id: Int!): Post
-  }
-
-  type Post {
-    author: User
-    content: String
-    createdAt: DateTime!
-    id: Int!
-    published: Boolean!
-    title: String!
-  }
-
-  input PostCreateInput {
-    content: String
-    title: String!
-  }
-
-  input PostOrderByUpdatedAtInput {
-    updatedAt: SortOrder!
-  }
-
-  type Query {
-    allUsers: [User!]!
-    draftsByUser(userUniqueInput: UserUniqueInput!): [Post]
-    posts: [Post!]!
-    feed(
-      orderBy: PostOrderByUpdatedAtInput
-      searchString: String
-      skip: Int
-      take: Int
-    ): [Post!]!
-    postById(id: Int): Post
-  }
-
-  enum SortOrder {
-    asc
-    desc
-  }
-
-  type User {
-    email: String!
-    id: Int!
-    name: String
-    posts: [Post!]!
-  }
-
-  input UserCreateInput {
-    email: String!
-    name: String
-    posts: [PostCreateInput!]
-  }
-
-  input UserUniqueInput {
-    email: String
-    id: Int
-  }
-
-  scalar DateTime
-`
+import { Context } from '../lib/prisma/context'
 
 export const resolvers = {
   Query: {
-    allUsers: (_parent, _args, context: Context) => {
+    allUsers: (_parent: any, _args: any, context: Context) => {
       return context.prisma.user.findMany()
     },
-    postById: (_parent, args: { id: number }, context: Context) => {
+    postById: (_parent: any, args: { id: number }, context: Context) => {
       return context.prisma.post.findUnique({
         where: { id: args.id || undefined },
       })
     }, 
-    posts: (_parent, _args, context: Context) => {
+    posts: (_parent: any, _args: any, context: Context) => {
       return context.prisma.post.findMany()
     },
     feed: (
-      _parent,
+      _parent: any,
       args: {
         searchString: string
         skip: number
@@ -113,7 +44,7 @@ export const resolvers = {
       })
     },
     draftsByUser: (
-      _parent,
+      _parent: any,
       args: { userUniqueInput: UserUniqueInput },
       context: Context,
     ) => {
@@ -133,7 +64,7 @@ export const resolvers = {
   },
   Mutation: {
     signupUser: (
-      _parent,
+      _parent: any,
       args: { data: UserCreateInput },
       context: Context,
     ) => {
@@ -152,7 +83,7 @@ export const resolvers = {
       })
     },
     createDraft: (
-      _parent,
+      _parent: any,
       args: { data: PostCreateInput; authorEmail: string },
       context: Context,
     ) => {
@@ -167,7 +98,7 @@ export const resolvers = {
       })
     },
     togglePublishPost: async (
-      _parent,
+      _parent: any,
       args: { id: number },
       context: Context,
     ) => {
@@ -190,7 +121,7 @@ export const resolvers = {
       }
     },
     incrementPostViewCount: (
-      _parent,
+      _parent: any,
       args: { id: number },
       context: Context,
     ) => {
@@ -203,7 +134,7 @@ export const resolvers = {
         },
       })
     },
-    deletePost: (_parent, args: { id: number }, context: Context) => {
+    deletePost: (_parent: any, args: { id: number }, context: Context) => {
       return context.prisma.post.delete({
         where: { id: args.id },
       })
@@ -211,7 +142,7 @@ export const resolvers = {
   },
   DateTime: DateTimeResolver,
   Post: {
-    author: (parent, _args, context: Context) => {
+    author: (parent: { id: any }, _args: any, context: Context) => {
       return context.prisma.post
         .findUnique({
           where: { id: parent?.id },
@@ -220,7 +151,7 @@ export const resolvers = {
     },
   },
   User: {
-    posts: (parent, _args, context: Context) => {
+    posts: (parent: { id: any }, _args: any, context: Context) => {
       return context.prisma.user
         .findUnique({
           where: { id: parent?.id },
@@ -254,8 +185,3 @@ interface UserCreateInput {
   name?: string
   posts?: PostCreateInput[]
 }
-
-export const schema = makeExecutableSchema({
-  typeDefs,
-  resolvers,
-})
