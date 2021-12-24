@@ -1,17 +1,12 @@
 import * as React from 'react';
-import { ReactNode } from 'react';
-import { IMenuProps, IMenuState } from 'types';
+import { IMenuProps } from 'types';
 
-
-
-export default class Menu extends React.Component<IMenuProps, IMenuState> {
+export default class Menu extends React.Component<IMenuProps> {
     private audio: HTMLAudioElement | null;
-    private playPromise: Promise<any> | null;
     constructor(props: IMenuProps) {
         super(props);
         this.handleSelectOption = this.handleSelectOption.bind(this);
         this.getAudioHandler = this.getAudioHandler.bind(this);
-        this.playPromise = null;
         this.audio = null;
     }
 
@@ -20,7 +15,7 @@ export default class Menu extends React.Component<IMenuProps, IMenuState> {
             this.audio = new Audio("enable-sound.mp3");
         }
 
-        if (process.browser && this.audio !== null && this.playPromise === null) {
+        if (process.browser && this.audio !== null) {
             this.audio.pause();
             this.audio.currentTime = 0;
         }
@@ -37,7 +32,7 @@ export default class Menu extends React.Component<IMenuProps, IMenuState> {
 
         return (
             <div className={this.props.className}>
-                {options.map(option => optionComponent(option))}
+                {options.map(optionComponent)}
             </div>
         );
     }

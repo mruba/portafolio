@@ -1,9 +1,6 @@
 import * as React from 'react';
-import invader from '../../public/invader.svg';
-import Image from 'next/image'
-import { ImenuOption } from '../menu';
+import { ImenuOption } from 'types';
 import classnames from 'classnames';
-import { Interface } from 'readline';
 import Link from 'next/link';
 
 function Icon(props: any) {
@@ -15,23 +12,17 @@ function Icon(props: any) {
 }
 
 
-
 const MenuOption: React.FunctionComponent<ImenuOption> = (props) => {
     return (
         <Link href={props.href} key={props.id}>
             <div
                 className={
-                    classnames('p-2 text-2xl text-center space-x-3 text-blue dark:text-indigo hover:text-red hover:animate-ping dark:hover:text-green ',
-                        props.className
-                    )}
-            >
-
-                {/* {props.active && <p className="inline-block">{'<'}</p>} */}
-                <p className="inline-block ">
+                    classnames('group p-2 text-2xl text-center space-x-3 text-blue dark:text-indigo hover:text-red hover:animate-ping dark:hover:text-green ')}>
+                <p className="inline-block relative ">
                     {props.label}
-                    {/* {props.active && <Icon className="fill-current h-12 w-12 absolute -top-3 -left-16" />} */}
+                    <Icon className="group-hover:animate-bounce opacity-0 group-hover:opacity-100  fill-current h-12 w-12 absolute -top-3 -left-16" />
                 </p>
-                {/* {props.active && <p className="inline-block">{'>'}</p>} */}
+
             </div >
         </Link>
     );

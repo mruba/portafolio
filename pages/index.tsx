@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import React, { useEffect } from 'react'
-import Menu from '../components/menu'
-import MenuOption from '../components/menu-option/menu-option'
-import { useTheme } from '../components/useTheme'
+import Menu from '@components/menu'
+import MenuOption from '@components/menu-option'
+import { useTheme } from '@components/useTheme'
 import { IHomeProps } from 'types'
 
 

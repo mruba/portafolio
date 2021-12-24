@@ -1,3 +1,2 @@
-import Menu, { ImenuOption } from "./menu";
-export { ImenuOption };
+import Menu from "./menu";
 export default Menu;

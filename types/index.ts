@@ -6,10 +6,6 @@ export interface ImenuOption {
     id: number
 }
 
-export interface IMenuState {
-    options: ImenuOption[];
-}
-
 export interface IMenuProps {
     options: ImenuOption[];
     className?: string
