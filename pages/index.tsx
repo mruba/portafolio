@@ -12,7 +12,7 @@ const Home: NextPage<IHomeProps> = ({ options }) => {
     changeTheme('dark')
   }, [])
   return (
-    <div className="px-5 py-5">
+    <div className="px-5 py-5" role="heading">
       <div className="space-y-3 bg-blue-light dark:bg-green-light text-center space-y-2 p-6 border-solid border-8 border-white mb-16" >
         <p className="text-white text-xl">hi, my name is</p>
         <p className="text-green-dark dark:text-pink text-4xl ">Miguel</p>
