@@ -1,7 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 
-interface IProps { }
+interface IProps {}
 
 const About: NextPage<IProps> = function (props) {
   return (
@@ -9,6 +9,6 @@ const About: NextPage<IProps> = function (props) {
       <p className="text-pink">this is about page</p>
     </div>
   );
-}
+};
 
 export default About;

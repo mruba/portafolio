@@ -5,8 +5,7 @@ import { useQuery, gql } from "@apollo/client";
 import Link from "next/link";
 import { initializeApollo } from "../../apollo/client";
 
-
-interface Iprops { }
+interface Iprops {}
 
 const Posts: NextPage<Iprops> = function (props) {
   // const {
@@ -39,7 +38,7 @@ const Posts: NextPage<Iprops> = function (props) {
       }}>Click me</button> */}
     </div>
   );
-}
+};
 
 export async function getServerSideProps() {
   const client = initializeApollo();

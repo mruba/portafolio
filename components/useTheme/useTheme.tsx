@@ -30,7 +30,5 @@ export function useTheme(): {
     }
   }, []);
 
-
-
   return { theme, changeTheme };
 }

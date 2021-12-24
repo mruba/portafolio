@@ -12,7 +12,10 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
   });
   return (
     <div className="px-5 py-5">
-      <div id="heading" className="space-y-3 bg-blue-light dark:bg-green-light text-center space-y-2 p-6 border-solid border-8 border-white mb-16">
+      <div
+        id="heading"
+        className="space-y-3 bg-blue-light dark:bg-green-light text-center space-y-2 p-6 border-solid border-8 border-white mb-16"
+      >
         <p className="text-white text-xl">hi, my name is</p>
         <p className="text-green-dark dark:text-pink text-4xl ">Miguel</p>
       </div>
@@ -24,7 +27,7 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
       />
     </div>
   );
-}
+};
 
 const options = [
   { id: 0, label: "About Me", href: "/about" },
