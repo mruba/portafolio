@@ -8,16 +8,6 @@ export function useTheme(): {
 } {
   const [theme, setTheme] = useState<ThemeType>("light");
 
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window?.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      changeTheme("dark");
-    }
-  }, []);
-
   function changeTheme(option: ThemeType) {
     if (option === "dark") {
       document.querySelector("html")?.classList?.add?.("dark");
@@ -29,6 +19,18 @@ export function useTheme(): {
       localStorage.theme = "light";
     }
   }
+
+  useEffect(() => {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window?.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      changeTheme("dark");
+    }
+  }, []);
+
+
 
   return { theme, changeTheme };
 }

@@ -2,13 +2,13 @@ import type { NextPage } from "next";
 import React from "react";
 
 import { useQuery, gql } from "@apollo/client";
+import Link from "next/link";
 import { initializeApollo } from "../../apollo/client";
 
-import Link from "next/link";
 
-interface Iprops {}
+interface Iprops { }
 
-const Posts: NextPage<Iprops> = (props) => {
+const Posts: NextPage<Iprops> = function (props) {
   // const {
   //   data,
   // } = useQuery(AllPostQuery)
@@ -25,7 +25,7 @@ const Posts: NextPage<Iprops> = (props) => {
         </div> */}
       </div>
       {props.posts.map((post) => (
-        <Link href={`/posts/${post.id}`} key={post.id}>
+        <Link href={`/posts/${post.id}`} key={post.id} passHref>
           <p className="text-green-dark"> {post.title}</p>
         </Link>
       ))}
@@ -39,7 +39,7 @@ const Posts: NextPage<Iprops> = (props) => {
       }}>Click me</button> */}
     </div>
   );
-};
+}
 
 export async function getServerSideProps() {
   const client = initializeApollo();

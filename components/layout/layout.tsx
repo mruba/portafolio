@@ -5,7 +5,7 @@ interface ILayoutProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
+const Layout: React.FunctionComponent<ILayoutProps> = function(props) {
   useTheme();
 
   return (
@@ -13,6 +13,6 @@ const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
       <div className="container mx-auto">{props.children}</div>
     </div>
   );
-};
+}
 
 export default Layout;

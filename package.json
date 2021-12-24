@@ -8,6 +8,7 @@
     "lint": "next lint",
     "postinstall": "prisma generate",
     "test": "jest --watch",
+    "lint:fix": "next lint --fix",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {

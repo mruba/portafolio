@@ -3,6 +3,7 @@ import { IMenuProps } from "types";
 
 export default class Menu extends React.Component<IMenuProps> {
   private audio: HTMLAudioElement | null;
+
   constructor(props: IMenuProps) {
     super(props);
     this.handleSelectOption = this.handleSelectOption.bind(this);

@@ -3,7 +3,7 @@ import { ImenuOption } from "types";
 import classnames from "classnames";
 import Link from "next/link";
 
-function Icon(props: any) {
+const Icon = function (props: any) {
   return (
     <svg
       data-testid="icon"
@@ -16,9 +16,9 @@ function Icon(props: any) {
   );
 }
 
-const MenuOption: React.FunctionComponent<ImenuOption> = (props) => {
+const MenuOption: React.FunctionComponent<ImenuOption> = function (props) {
   return (
-    <Link href={props.href} key={props.id}>
+    <Link href={props.href} key={props.id} passHref>
       <div
         className={classnames(
           "group cursor-pointer p-2 text-2xl text-center space-x-3 text-blue dark:text-indigo hover:text-red hover:animate-ping dark:hover:text-green "
@@ -31,6 +31,6 @@ const MenuOption: React.FunctionComponent<ImenuOption> = (props) => {
       </div>
     </Link>
   );
-};
+}
 
 export default MenuOption;

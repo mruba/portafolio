@@ -1,9 +1,9 @@
 import { ApolloServer } from "apollo-server-micro";
+import { MicroRequest } from "apollo-server-micro/dist/types";
+import { ServerResponse } from "http";
 import { resolvers } from "../../apollo/resolvers";
 import { typeDefs } from "../../apollo/type-defs";
 import { context } from "../../prisma/context";
-import { MicroRequest } from "apollo-server-micro/dist/types";
-import { ServerResponse } from "http";
 
 export const config = {
   api: {
