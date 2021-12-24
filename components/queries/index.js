@@ -1,14 +1,15 @@
-import { gql } from '@apollo/client'
+import gql from "graphql-tag"
 
-
-export const ALL_POSTS_QUERY = gql`
-  query posts{
+export const AllPostQuery = gql`
+  query AllPostQuery{
+    posts{
       content
       createdAt
       id
       published
       title
     }
+  }
 `
 
 export const allPostsQueryVars = {

@@ -12,7 +12,7 @@ export const typeDefs = gql`
   type Post {
     author: User
     content: String
-    createdAt: DateTime!
+    createdAt: String!
     id: Int!
     published: Boolean!
     title: String!

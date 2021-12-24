@@ -12,8 +12,7 @@ function createIsomorphLink() {
     // const { schema } = require('./schema')
     // const {resolvers} = require('./resolvers')
     // const {typeDefs} = require('./type-defs')
-    const context = require('../prisma/context')
-    // console.warn(schema)
+    const {context} = require('../prisma/context')
     return new SchemaLink({ schema, context })
   } else {
     const { HttpLink } = require('@apollo/client/link/http')

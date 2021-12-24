@@ -2,31 +2,22 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useEffect } from 'react'
 import profilePic from '../public/pixel-art-mike.png'
 import Menu, { ImenuOption } from '../components/menu'
 import MenuOption from '../components/menu-option/menu-option'
 import styles from '../styles/Home.module.css'
 import { useTheme } from '../components/useTheme'
-
-import {
-  allPostsQueryVars,
-  ALL_POSTS_QUERY,
-} from '../components/queries'
-
-import { useQuery } from '@apollo/client'
+import { IHomeProps } from 'types'
+import { useQuery, gql } from '@apollo/client'
 import { initializeApollo, addApolloState } from '../apollo/client'
 
 
-interface Iprops {
-  menuOptions: ImenuOption[]
-}
-
-const Home: NextPage<Iprops> = props => {
-  const {
-    data
-  } = useQuery(ALL_POSTS_QUERY)
-  // const { theme, changeTheme } = useTheme();
+const Home: NextPage<IHomeProps> = ({ options }) => {
+  const { theme, changeTheme } = useTheme();
+  useEffect(() => {
+    changeTheme('dark')
+  }, [])
   return (
     <div className="px-5 py-5">
 
@@ -47,49 +38,49 @@ const Home: NextPage<Iprops> = props => {
         }
 
       }}>Click me</button> */}
-      <Menu className="space-y-2" initialOptions={props.menuOptions} >
-        {
-          ({ options, handleSelectOption }) => options.map((option: ImenuOption) => (
-            <MenuOption
-              key={option.id}
-              label={option.label}
-              href={option.href}
-              id={option.id}
-              active={option.active}
-              handleSelectOption={handleSelectOption}
-              className="justify-center"
-            />
-          ))
-        }
-      </Menu>
+
+      <Menu
+        className="space-y-2"
+        options={options}
+        optionComponent={MenuOption}
+      />
 
     </div>
 
   )
 }
 
-const menuOptions = [
+const options = [
   { id: 0, label: 'About Me', href: '/about', active: false },
   { id: 1, label: 'Projects', href: '/who', active: false },
-  { id: 2, label: 'Blog', href: '/who', active: false },
+  { id: 2, label: 'Blog', href: '/posts', active: false },
   { id: 3, label: 'Configs', href: '/who', active: false },
   { id: 4, label: 'Social', href: '/who', active: false },
 ]
 
 Home.defaultProps = {
-  menuOptions
+  options
 }
 
-export async function getStaticProps() {
-  const apolloClient = initializeApollo()
+export async function getServerSideProps() {
+  const client = initializeApollo()
 
-  await apolloClient.query({
-    query: ALL_POSTS_QUERY,
+  const { data } = await client.query({
+    query: gql`  
+    query{
+      posts{
+        content
+        createdAt
+        id
+        published
+        title
+      }
+    }`,
   })
 
   return {
     props: {
-      initialApolloState: apolloClient.cache.extract(),
+      initialApolloState: client.cache.extract(),
     },
   }
 

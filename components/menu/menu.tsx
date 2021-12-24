@@ -1,25 +1,7 @@
 import * as React from 'react';
 import { ReactNode } from 'react';
+import { IMenuProps, IMenuState } from 'types';
 
-interface ImenuOption {
-    label: string
-    href: string
-    id: string
-    active: boolean
-
-
-}
-
-interface IMenuState {
-    options: ImenuOption[];
-}
-
-interface IMenuProps {
-    initialOptions: ImenuOption[];
-    children: (props: any) => ReactNode
-    className?: string
-    // handleSelectOption(): void;
-}
 
 
 export default class Menu extends React.Component<IMenuProps, IMenuState> {
@@ -29,34 +11,8 @@ export default class Menu extends React.Component<IMenuProps, IMenuState> {
         super(props);
         this.handleSelectOption = this.handleSelectOption.bind(this);
         this.getAudioHandler = this.getAudioHandler.bind(this);
-        this.handleKeyPress = this.handleKeyPress.bind(this);
         this.playPromise = null;
         this.audio = null;
-        this.state = {
-            options: this.props.initialOptions
-        }
-    }
-
-    componentDidMount() {
-        window.addEventListener("keydown", this.handleKeyPress);
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("keydown", this.handleKeyPress);
-    }
-
-    handleKeyPress(event: any) {
-        if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-            const index = this.state.options.findIndex((option: ImenuOption) => option.active);
-            if (event.key === "ArrowDown" && index < this.state.options.length - 1) {
-                this.handleSelectOption(this.state.options[index + 1].id);
-            }
-
-            if (event.key === "ArrowUp" && index > 0) {
-                this.handleSelectOption(this.state.options[index - 1].id);
-            }
-        }
-
     }
 
     private getAudioHandler() {
@@ -64,41 +20,24 @@ export default class Menu extends React.Component<IMenuProps, IMenuState> {
             this.audio = new Audio("enable-sound.mp3");
         }
 
-        if (this.audio !== null) {
-            if (this.playPromise !== undefined) {
-                this.audio.pause();
-                this.audio.currentTime = 0;
-            }
-            this.playPromise = this.audio.play();
+        if (process.browser && this.audio !== null && this.playPromise === null) {
+            this.audio.pause();
+            this.audio.currentTime = 0;
         }
 
     }
 
-    public handleSelectOption(id: any) {
-
-
+    public handleSelectOption(id: string) {
         this.getAudioHandler();
-
-        this.setState({
-            options: this.state.options.map((option: ImenuOption) => {
-                if (option.id === id) {
-                    option.active = true;
-                } else {
-                    option.active = false;
-                }
-                return option;
-            })
-        })
     }
 
     public render() {
 
+        const { optionComponent, options } = this.props;
+
         return (
             <div className={this.props.className}>
-                {this.props.children({
-                    options: this.state.options,
-                    handleSelectOption: this.handleSelectOption
-                })}
+                {options.map(option => optionComponent(option))}
             </div>
         );
     }

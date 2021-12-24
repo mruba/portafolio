@@ -16,15 +16,16 @@
     "deepmerge": "^4.2.2",
     "graphql": "^16.1.0",
     "graphql-scalars": "^1.13.6",
+    "graphql-tag": "^2.12.6",
     "graphql-tools": "^8.2.0",
     "lodash": "^4.17.21",
     "micro": "^9.3.4",
     "next": "12.0.4",
     "next-themes": "^0.0.15",
+    "prisma": "^3.6.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "use-sound": "^4.0.1",
-    "prisma": "^3.6.0"
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@types/node": "16.11.10",
@@ -33,7 +34,6 @@
     "eslint": "7.32.0",
     "eslint-config-next": "12.0.4",
     "postcss": "^8.4.4",
-    
     "tailwindcss": "^2.2.19",
     "typescript": "4.5.2"
   }

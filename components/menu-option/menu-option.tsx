@@ -18,20 +18,16 @@ function Icon(props: any) {
 
 const MenuOption: React.FunctionComponent<ImenuOption> = (props) => {
     return (
-        <Link href={props.href}>
+        <Link href={props.href} key={props.id}>
             <div
                 className={
-                    classnames('p-2 text-2xl text-center space-x-3', {
-                        'text-blue dark:text-indigo': !props.active,
-                        'text-red dark:text-green': props.active,
-                    },
+                    classnames('p-2 text-2xl text-center space-x-3 text-blue dark:text-indigo hover:text-red hover:animate-ping dark:hover:text-green ',
                         props.className
                     )}
-                onMouseEnter={() => props.handleSelectOption(props.id)}
             >
 
                 {/* {props.active && <p className="inline-block">{'<'}</p>} */}
-                <p className="inline-block">
+                <p className="inline-block ">
                     {props.label}
                     {/* {props.active && <Icon className="fill-current h-12 w-12 absolute -top-3 -left-16" />} */}
                 </p>
