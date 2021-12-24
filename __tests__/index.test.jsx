@@ -55,6 +55,19 @@ describe('Option Component', () => {
     fireEvent.mouseOver(screen.getByText(/this is label test/i));
     const icon = screen.getByTestId('icon')
     expect(icon).toHaveClass('group-hover:opacity-100')
-    
   })
+
+  it('it should have required props', () => {
+    render(
+      <MenuOption
+        label={'this is label test'}
+        href={'/test'}
+        id={1}
+      />
+    )
+    fireEvent.mouseOver(screen.getByText(/this is label test/i));
+    const icon = screen.getByTestId('icon')
+    expect(icon).toHaveClass('group-hover:opacity-100')
+  })
+
 })
