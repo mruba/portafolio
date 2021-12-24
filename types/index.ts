@@ -2,9 +2,8 @@ import { ReactNode } from 'react';
 
 export interface ImenuOption {
     label: string
-    href: string
+    href?: string
     id: number
-    active: boolean
 }
 
 export interface IMenuState {
