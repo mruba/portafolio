@@ -17,6 +17,7 @@ const Home: NextPage<IHomeProps> = ({ options }) => {
         <p className="text-white text-xl">hi, my name is</p>
         <p className="text-green-dark dark:text-pink text-4xl ">Miguel</p>
       </div>
+      
       <Menu
         className="space-y-2"
         options={options}

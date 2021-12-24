@@ -27,11 +27,9 @@ export default class Menu extends React.Component<IMenuProps> {
     }
 
     public render() {
-
-        const { optionComponent, options } = this.props;
-
+        const { optionComponent, options, className } = this.props;
         return (
-            <div className={this.props.className}>
+            <div className={className}>
                 {options.map(optionComponent)}
             </div>
         );
