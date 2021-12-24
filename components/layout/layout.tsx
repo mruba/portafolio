@@ -1,20 +1,18 @@
-import * as React from 'react';
-import { useTheme } from '../useTheme'
+import * as React from "react";
+import { useTheme } from "../useTheme";
 
 interface ILayoutProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
-    useTheme();
+  useTheme();
 
-    return (
-        <div className="dark:bg-black  h-screen">
-            <div className="container mx-auto">
-                {props.children}
-            </div>
-        </div>
-    );
+  return (
+    <div className="dark:bg-black  h-screen">
+      <div className="container mx-auto">{props.children}</div>
+    </div>
+  );
 };
 
 export default Layout;

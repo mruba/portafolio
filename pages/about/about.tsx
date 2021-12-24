@@ -1,18 +1,14 @@
-import type { NextPage } from 'next'
-import React from 'react'
+import type { NextPage } from "next";
+import React from "react";
 
+interface IProps {}
 
-interface IProps {
-
-}
-
-const About: NextPage<IProps> = props => {
-return( 
+const About: NextPage<IProps> = (props) => {
+  return (
     <div>
-        <p className="text-pink">this is about page</p>
-        
+      <p className="text-pink">this is about page</p>
     </div>
-)
-}
+  );
+};
 
-export default About
+export default About;

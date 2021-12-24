@@ -1,18 +1,17 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export interface ImenuOption {
-    label: string
-    href: string
-    id: number
+  label: string;
+  href: string;
+  id: number;
 }
 
 export interface IMenuProps {
-    options: ImenuOption[];
-    className?: string
-    optionComponent: (props: ImenuOption) => ReactNode
+  options: ImenuOption[];
+  className?: string;
+  optionComponent: (props: ImenuOption) => ReactNode;
 }
 
 export interface IHomeProps {
-    options: ImenuOption[]
+  options: ImenuOption[];
 }
-

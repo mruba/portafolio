@@ -1,12 +1,13 @@
-import {  gql } from '@apollo/client'
+import { gql } from "@apollo/client";
 
-export const getPosts = gql`  
-query{
-  posts{
-    content
-    createdAt
-    id
-    published
-    title
+export const getPosts = gql`
+  query {
+    posts {
+      content
+      createdAt
+      id
+      published
+      title
+    }
   }
-}`
+`;

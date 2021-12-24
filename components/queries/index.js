@@ -1,8 +1,8 @@
-import gql from "graphql-tag"
+import gql from "graphql-tag";
 
 export const AllPostQuery = gql`
-  query AllPostQuery{
-    posts{
+  query AllPostQuery {
+    posts {
       content
       createdAt
       id
@@ -10,9 +10,9 @@ export const AllPostQuery = gql`
       title
     }
   }
-`
+`;
 
 export const allPostsQueryVars = {
   skip: 0,
   first: 10,
-}
+};
