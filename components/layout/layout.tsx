@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useTheme } from "../useTheme";
+import useTheme from "../useTheme";
 
 interface ILayoutProps {
   children: React.ReactNode;
