@@ -24,9 +24,9 @@ const MenuOption: React.FunctionComponent<ImenuOption> = function (props) {
           "group cursor-pointer p-2 text-2xl text-center space-x-3 text-blue dark:text-indigo hover:text-red hover:animate-ping dark:hover:text-green "
         )}
       >
-        <p className="inline-block relative ">
+        <p className="inline-block relative">
           {props.label}
-          <Icon className="group-hover:animate-bounce opacity-0 group-hover:opacity-100  fill-current h-12 w-12 absolute -top-3 -left-16" />
+          <Icon className="opacity-0 group-hover:opacity-100  fill-current h-12 w-12 absolute -top-3 -left-16" />
         </p>
       </div>
     </Link>
