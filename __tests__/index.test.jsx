@@ -1,4 +1,10 @@
-import { render, screen, fireEvent, prettyDOM, getByRole } from "@testing-library/react";
+import {
+  render,
+  screen,
+  fireEvent,
+  prettyDOM,
+  getByRole,
+} from "@testing-library/react";
 import Home from "../pages";
 import MenuOption from "@components/menu-option";
 import Menu from "@components/menu";
@@ -53,8 +59,8 @@ describe("Menu Component", () => {
       const optionElement = screen.getByText(option.label);
       expect(optionElement).toBeInTheDocument();
     });
-  })
-})
+  });
+});
 
 describe("Option Component", () => {
   it("renders a option component", () => {
@@ -76,6 +82,4 @@ describe("Option Component", () => {
     const icon = screen.getByTestId("icon");
     expect(icon).toHaveClass("group-hover:opacity-100");
   });
-
-
 });
