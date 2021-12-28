@@ -9,7 +9,7 @@ const Layout: React.FunctionComponent<ILayoutProps> = function (props) {
   useTheme();
 
   return (
-    <div className="dark:bg-black h-screen px-5 py-5">
+    <div className="dark:bg-black h-screen px-5 py-5 overflow-auto">
       <div className="container mx-auto">{props.children}</div>
     </div>
   );
