@@ -1,9 +1,10 @@
 import React from "react";
 import type { NextPage } from "next";
 import Image from "next/image";
+import TimeLine from "@components/time-line";
 import profilePic from "../../public/images/profile.png";
 
-interface IProps {}
+interface IProps { }
 
 const About: NextPage<IProps> = function (props) {
   return (
@@ -16,6 +17,7 @@ const About: NextPage<IProps> = function (props) {
         alt="Picture of the author"
       />
       <p className="text-pink">this is about page</p>
+      <TimeLine />
     </div>
   );
 };
