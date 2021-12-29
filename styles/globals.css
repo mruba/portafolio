@@ -4,7 +4,7 @@
 
 html,
 body {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
 }
 
 @layer base {
@@ -20,7 +20,31 @@ body {
   }
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --background: transparent;
   --foreground: transparent;
+}
+
+.pixelBox {
+  border-top: 10px solid #5353f1;
+  border-bottom: 10px solid #5353f1;
+  position: relative;
+}
+
+.pixelBox::before,
+.pixelBox::after {
+  content: "";
+  top: 0;
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  background: #5353f1;
+}
+
+.pixelBox::before {
+  left: -10px;
+}
+
+.pixelBox::after {
+  right: -10px;
 }
