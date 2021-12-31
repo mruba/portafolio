@@ -1,2 +1,2 @@
-import PixelateContainer from './pixel-box';
+import PixelateContainer from "./pixel-box";
 export default PixelateContainer;

@@ -16,15 +16,11 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
     <div className="relative">
       {/* better to keep pixelbox decouple from container so I can pass down styles for diferent context */}
       <div className="flex max-w-3xl text-center mx-auto mt-8 mb-16">
-        <PixelBox
-          id="heading"
-          className="p-9"
-        >
+        <PixelBox id="heading" className="p-9">
           <p className="text-white text-xl">Hi, my name is</p>
           <p className="text-green-dark dark:text-white text-4xl ">Miguel</p>
         </PixelBox>
       </div>
-
 
       <Menu
         className="space-y-2"

@@ -1,19 +1,21 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement } from "react";
 import classnames from "classnames";
-import styles from './pixel-box.module.css'
+import styles from "./pixel-box.module.css";
 
 interface Props {
-    children: ReactElement | ReactElement[]
-    className?: string
-    id?: string
+  children: ReactElement | ReactElement[];
+  className?: string;
+  id?: string;
 }
 
-export default function pixelateContainer({ className, children, id }: Props): ReactElement {
-    return (
-        <div id={id} className={classnames(styles.container)}>
-            <div className={classnames(styles.wrapper, className)}>
-                {children}
-            </div>
-        </div>
-    )
+export default function pixelateContainer({
+  className,
+  children,
+  id,
+}: Props): ReactElement {
+  return (
+    <div id={id} className={classnames(styles.container)}>
+      <div className={classnames(styles.wrapper, className)}>{children}</div>
+    </div>
+  );
 }

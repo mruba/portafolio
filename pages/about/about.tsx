@@ -4,7 +4,7 @@ import Image from "next/image";
 import TimeLine from "@components/time-line";
 import profilePic from "../../public/images/profile.png";
 
-interface IProps { }
+interface IProps {}
 
 const About: NextPage<IProps> = function (props) {
   return (
@@ -20,8 +20,16 @@ const About: NextPage<IProps> = function (props) {
       </div>
       <h1 className="text-white py-3">About Me</h1>
       <p className="text-pink leading-7 break-all">
-        Lorem ipsum dolor sit amet, vel te sumo definitionem, incorrupte interesset in duo, facete voluptua appetere et mel. At mei apeirian eleifend. Fabulas elaboraret ea sed. Prodesset appellantur delicatissimi qui te, amet primis laboramus mel in. Eos ei eros nemore necessitatibus, amet forensibus instructior est no.
-        Lorem ipsum dolor sit amet, vel te sumo definitionem, incorrupte interesset in duo, facete voluptua appetere et mel. At mei apeirian eleifend. Fabulas elaboraret ea sed. Prodesset appellantur delicatissimi qui te, amet primis laboramus mel in. Eos ei eros nemore necessitatibus, amet forensibus instructior est no.
+        Lorem ipsum dolor sit amet, vel te sumo definitionem, incorrupte
+        interesset in duo, facete voluptua appetere et mel. At mei apeirian
+        eleifend. Fabulas elaboraret ea sed. Prodesset appellantur delicatissimi
+        qui te, amet primis laboramus mel in. Eos ei eros nemore necessitatibus,
+        amet forensibus instructior est no. Lorem ipsum dolor sit amet, vel te
+        sumo definitionem, incorrupte interesset in duo, facete voluptua
+        appetere et mel. At mei apeirian eleifend. Fabulas elaboraret ea sed.
+        Prodesset appellantur delicatissimi qui te, amet primis laboramus mel
+        in. Eos ei eros nemore necessitatibus, amet forensibus instructior est
+        no.
       </p>
       <TimeLine />
       {/* current location button with google maps pin */}

@@ -1,2 +1,2 @@
-import Astronaut from './astronaut'
-export default Astronaut
+import Astronaut from "./astronaut";
+export default Astronaut;
