@@ -4,6 +4,7 @@ import Menu from "@components/menu";
 import MenuOption from "@components/menu-option";
 import useTheme from "@components/useTheme";
 import { IHomeProps } from "types";
+import Astronaut from "@components/astronaut";
 
 const Home: NextPage<IHomeProps> = function ({ options }) {
   const { theme: _theme, changeTheme } = useTheme();
@@ -11,7 +12,7 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
     changeTheme("dark");
   });
   return (
-    <div className="">
+    <div className="relative">
       <div
         id="heading"
         className="space-y-3 bg-blue-light dark:bg-pink-dark text-center space-y-2 p-12 border-groove rounded-xl border-8 border-white mb-16"
@@ -25,6 +26,8 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
         options={options}
         optionComponent={MenuOption}
       />
+
+      <Astronaut className="hidden absolute bottom-0 left-0 h-72 w-auto sm:block" />
     </div>
   );
 };

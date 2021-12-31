@@ -4,7 +4,7 @@ const timeLineItem = (props: Props, index: number) => {
     const { description, id, tags, workingPeriod, title } = props;
     const shouldRenderLeft = index % 2 !== 0;
     return (
-        <div key={id} className={classNames("relative flex ", {
+        <div key={id} className={classNames("relative flex sm:mt-0 sm:mb-12", {
             "sm:justify-end": shouldRenderLeft,
         })} >
             <div className={classNames("w-full sm:w-1/2", {
@@ -28,9 +28,10 @@ const timeLineItem = (props: Props, index: number) => {
             </div>
 
             <div className={classNames("bg-red border-white border-4 w-12 h-12 absolute left-1/2 -translate-y-4 sm:bottom-1/2 sm:translate-y-1/2 transform -translate-x-1/2 flex items-center justify-center")}>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" version="1.1" viewBox="0 0 6.6146 6.6146" >
+                    <path d="m5.016 1.6523h0.68316v0.68321h-0.68316zm-1.3664 0h0.6831v0.68321h-0.6831zm2.0496-1.3668v0.68354h-2.7332v-0.68354h-0.68327v2.7333h-1.3665v-0.68321h-0.68348v4.0998h0.68348v-1.3667h0.68327v1.3667h0.68321v-1.3667h0.68327v1.3667h0.68354v-1.3667h0.6831v1.3667h0.68332v-2.7331h0.68316v-0.68354h0.68348v-2.7333h-0.68348" fill="#ffffff" stroke-width=".099488" />
                 </svg>
+
             </div>
         </div>
     )
