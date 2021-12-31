@@ -1,4 +1,6 @@
 import classNames from "classnames";
+import PixelBox from "@components/pixel-box";
+
 
 const timeLineItem = (props: Props, index: number) => {
     const { description, id, tags, workingPeriod, title } = props;
@@ -11,7 +13,7 @@ const timeLineItem = (props: Props, index: number) => {
                 "sm:pr-14": !shouldRenderLeft,
                 "sm:pl-14": shouldRenderLeft,
             })}>
-                <div className={"pixelBox p-5 pt-8 sm:pt-5  w-full bg-white shadow space-y-4"}>
+                <PixelBox className="bg-white">
                     <p className="text-lg">{title} <span className="text-sm text-pink">{workingPeriod}</span></p>
                     <p>{description}</p>
                     <div>
@@ -24,7 +26,7 @@ const timeLineItem = (props: Props, index: number) => {
                                 </span>
                         )}
                     </div>
-                </div>
+                </PixelBox>
             </div>
 
             <div className={classNames("bg-red border-white border-4 w-12 h-12 absolute left-1/2 -translate-y-4 sm:bottom-1/2 sm:translate-y-1/2 transform -translate-x-1/2 flex items-center justify-center")}>
