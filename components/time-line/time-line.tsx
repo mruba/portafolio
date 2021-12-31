@@ -59,10 +59,10 @@ interface Props {
 
 export default function TimeLine(props: ITimeLineProps) {
     return (
-        <div className=" py-12 sm:mx-auto px-2 sm:px-6">
+        <div className="py-12 sm:mx-auto">
 
 
-            <div className="relative text-gray-800 text-sm font-semibold space-y-12">
+            <div className="relative text-gray-800 text-sm font-semibold space-y-16 sm:space-y-12">
 
                 <div className="hidden sm:block w-3 bg-blue absolute h-full left-1/2 transform -translate-x-1/2"></div>
                 {timeLine.map(timeLineItem)}

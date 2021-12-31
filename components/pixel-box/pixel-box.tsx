@@ -10,11 +10,9 @@ interface Props {
 
 export default function pixelateContainer({ className, children, id }: Props): ReactElement {
     return (
-        <div id={id} className={classnames(className)}>
-            <div className={styles.container}>
-                <div className={styles.wrapper}>
-                    {children}
-                </div>
+        <div id={id} className={classnames(styles.container)}>
+            <div className={classnames(styles.wrapper, className)}>
+                {children}
             </div>
         </div>
     )
