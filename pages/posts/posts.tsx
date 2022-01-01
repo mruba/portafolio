@@ -5,7 +5,9 @@ import { useQuery, gql } from "@apollo/client";
 import Link from "next/link";
 import { initializeApollo } from "../../apollo/client";
 
-interface Iprops {}
+interface Iprops {
+  posts: any[];
+}
 
 const Posts: NextPage<Iprops> = function (props) {
   // const {
