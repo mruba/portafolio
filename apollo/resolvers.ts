@@ -26,11 +26,11 @@ export const resolvers = {
     ) => {
       const or = args.searchString
         ? {
-          OR: [
-            { title: { contains: args.searchString } },
-            { content: { contains: args.searchString } },
-          ],
-        }
+            OR: [
+              { title: { contains: args.searchString } },
+              { content: { contains: args.searchString } },
+            ],
+          }
         : {};
 
       return context.prisma.post.findMany({
@@ -48,13 +48,12 @@ export const resolvers = {
       args: { userUniqueInput: UserUniqueInput },
       context: Context
     ) => {
-      return context.prisma.user
-        .findUnique({
-          where: {
-            id: args.userUniqueInput.id || undefined,
-            email: args.userUniqueInput.email || undefined,
-          },
-        })
+      return context.prisma.user.findUnique({
+        where: {
+          id: args.userUniqueInput.id || undefined,
+          email: args.userUniqueInput.email || undefined,
+        },
+      });
     },
   },
   Mutation: {
@@ -70,7 +69,7 @@ export const resolvers = {
       return context.prisma.user.create({
         data: {
           name: args.data.name,
-          email: args.data.email
+          email: args.data.email,
         },
       });
     },
@@ -119,8 +118,7 @@ export const resolvers = {
     ) => {
       return context.prisma.post.update({
         where: { id: args.id || undefined },
-        data: {
-        },
+        data: {},
       });
     },
     deletePost: (_parent: any, args: { id: number }, context: Context) => {
@@ -141,10 +139,9 @@ export const resolvers = {
   },
   User: {
     posts: (parent: { id: any }, _args: any, context: Context) => {
-      return context.prisma.user
-        .findUnique({
-          where: { id: parent?.id },
-        })
+      return context.prisma.user.findUnique({
+        where: { id: parent?.id },
+      });
     },
   },
 };
