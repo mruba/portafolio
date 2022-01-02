@@ -6,10 +6,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
     "postinstall": "prisma generate",
     "test": "jest --watch",
     "lint:fix": "next lint --fix",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.5.5",

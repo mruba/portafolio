@@ -26,11 +26,11 @@ export const resolvers = {
     ) => {
       const or = args.searchString
         ? {
-            OR: [
-              { title: { contains: args.searchString } },
-              { content: { contains: args.searchString } },
-            ],
-          }
+          OR: [
+            { title: { contains: args.searchString } },
+            { content: { contains: args.searchString } },
+          ],
+        }
         : {};
 
       return context.prisma.post.findMany({
@@ -55,11 +55,6 @@ export const resolvers = {
             email: args.userUniqueInput.email || undefined,
           },
         })
-        .posts({
-          where: {
-            published: false,
-          },
-        });
     },
   },
   Mutation: {
@@ -75,10 +70,7 @@ export const resolvers = {
       return context.prisma.user.create({
         data: {
           name: args.data.name,
-          email: args.data.email,
-          posts: {
-            create: postData,
-          },
+          email: args.data.email
         },
       });
     },
@@ -128,9 +120,6 @@ export const resolvers = {
       return context.prisma.post.update({
         where: { id: args.id || undefined },
         data: {
-          viewCount: {
-            increment: 1,
-          },
         },
       });
     },
@@ -156,7 +145,6 @@ export const resolvers = {
         .findUnique({
           where: { id: parent?.id },
         })
-        .posts();
     },
   },
 };
