@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "ANALYZE=true yarn build",
     "start": "next start",
     "lint": "next lint",
     "prisma:migrate": "prisma migrate dev",
@@ -12,12 +13,14 @@
     "test": "jest --watch",
     "lint:fix": "next lint --fix",
     "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+    
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.5.6",
+    "@next/bundle-analyzer": "^12.0.7",
     "@prisma/client": "^3.6.0",
     "apollo-server-micro": "^3.5.0",
     "classnames": "^2.3.1",
