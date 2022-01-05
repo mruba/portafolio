@@ -14,7 +14,10 @@ module.exports = withBundleAnalyzer({
         filename: "static/chunks/[path][name].[hash][ext]",
       },
     });
-
     return config;
+  },
+  images: {
+    loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/mruba-media/image/upload',
   },
 });

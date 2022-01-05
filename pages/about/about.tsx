@@ -4,14 +4,14 @@ import Image from "next/image";
 import TimeLine from "@components/time-line";
 import profilePic from "../../public/images/profile.png";
 
-interface IProps {}
+interface IProps { }
 
 const About: NextPage<IProps> = function (props) {
   return (
     <div>
       <div className="float-left px-6 py-4">
         <Image
-          src={profilePic}
+          src="/v1641355639/mike-avatar_ho5f3k.png"
           width={150}
           height={150}
           className="rounded-full"
