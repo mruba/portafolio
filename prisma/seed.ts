@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+
 const prisma = new PrismaClient()
 
 async function main() {
@@ -9,12 +10,23 @@ async function main() {
             email: 'alice@prisma.io',
             name: 'Alice',
             posts: {
-                create: {
+                create: [{
                     title: 'Check out Prisma with Next.js',
                     content: 'https://www.prisma.io/nextjs',
                     published: true,
                 },
+                {
+                    title: 'Check out Prisma with Next.js',
+                    content: 'https://www.prisma.io/nextjs',
+                    published: false,
+                }
+                ],
             },
+            profile: {
+                create: {
+                    bio: 'I am a great developer',
+                }
+            }
         },
     })
 
@@ -38,6 +50,11 @@ async function main() {
                     },
                 ],
             },
+            profile: {
+                create: {
+                    bio: 'Bob is a great developer',
+                }
+            }
         },
     })
     console.log({ alice, bob })
