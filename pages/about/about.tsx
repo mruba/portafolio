@@ -4,7 +4,7 @@ import Image from "next/image";
 import TimeLine from "@components/time-line";
 import profilePic from "../../public/images/profile.png";
 
-interface IProps { }
+interface IProps {}
 
 const About: NextPage<IProps> = function (props) {
   return (

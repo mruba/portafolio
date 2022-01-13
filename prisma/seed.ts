@@ -1,70 +1,71 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 async function main() {
-    const alice = await prisma.user.upsert({
-        where: { email: 'alice@prisma.io' },
-        update: {},
+  const alice = await prisma.user.upsert({
+    where: { email: "alice@prisma.io" },
+    update: {},
+    create: {
+      email: "alice@prisma.io",
+      name: "Alice",
+      posts: {
+        create: [
+          {
+            title: "Check out Prisma with Next.js",
+            content: "https://www.prisma.io/nextjs",
+            published: true,
+          },
+          {
+            title: "Check out Prisma with Next.js",
+            content: "https://www.prisma.io/nextjs",
+            published: false,
+          },
+        ],
+      },
+      profile: {
         create: {
-            email: 'alice@prisma.io',
-            name: 'Alice',
-            posts: {
-                create: [{
-                    title: 'Check out Prisma with Next.js',
-                    content: 'https://www.prisma.io/nextjs',
-                    published: true,
-                },
-                {
-                    title: 'Check out Prisma with Next.js',
-                    content: 'https://www.prisma.io/nextjs',
-                    published: false,
-                }
-                ],
-            },
-            profile: {
-                create: {
-                    bio: 'I am a great developer',
-                }
-            }
+          bio: "I am a great developer",
         },
-    })
+      },
+    },
+  });
 
-    const bob = await prisma.user.upsert({
-        where: { email: 'bob@prisma.io' },
-        update: {},
+  const bob = await prisma.user.upsert({
+    where: { email: "bob@prisma.io" },
+    update: {},
+    create: {
+      email: "bob@prisma.io",
+      name: "Bob",
+      posts: {
+        create: [
+          {
+            title: "Follow Prisma on Twitter",
+            content: "https://twitter.com/prisma",
+            published: true,
+          },
+          {
+            title: "Follow Nexus on Twitter",
+            content: "https://twitter.com/nexusgql",
+            published: true,
+          },
+        ],
+      },
+      profile: {
         create: {
-            email: 'bob@prisma.io',
-            name: 'Bob',
-            posts: {
-                create: [
-                    {
-                        title: 'Follow Prisma on Twitter',
-                        content: 'https://twitter.com/prisma',
-                        published: true,
-                    },
-                    {
-                        title: 'Follow Nexus on Twitter',
-                        content: 'https://twitter.com/nexusgql',
-                        published: true,
-                    },
-                ],
-            },
-            profile: {
-                create: {
-                    bio: 'Bob is a great developer',
-                }
-            }
+          bio: "Bob is a great developer",
         },
-    })
-    console.log({ alice, bob })
+      },
+    },
+  });
+  console.log({ alice, bob });
 }
 
 main()
-    .catch((e) => {
-        console.error(e)
-        process.exit(1)
-    })
-    .finally(async () => {
-        await prisma.$disconnect()
-    })
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });

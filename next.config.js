@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
 
 module.exports = withBundleAnalyzer({
   reactStrictMode: true,
@@ -17,7 +17,7 @@ module.exports = withBundleAnalyzer({
     return config;
   },
   images: {
-    loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/mruba-media/image/upload',
+    loader: "cloudinary",
+    path: "https://res.cloudinary.com/mruba-media/image/upload",
   },
 });
