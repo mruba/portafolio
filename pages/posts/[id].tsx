@@ -15,6 +15,7 @@ const Posts: NextPage<Iprops> = function (props) {
   // } = useQuery(AllPostQuery)
   // console.log(data)
   // const { theme, changeTheme } = useTheme();
+
   return (
     <div className="px-5 py-5">
       <p className="text-green-dark dark:text-pink text-4xl ">
@@ -42,6 +43,7 @@ export async function getServerSideProps({ params }: any) {
   });
 
   console.log(data);
+
   return {
     props: {
       postId: params.id,
