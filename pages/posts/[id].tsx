@@ -43,7 +43,7 @@ export async function getServerSideProps({ params }: any) {
   });
 
   console.log(data);
-
+  dd
   return {
     props: {
       postId: params.id,
