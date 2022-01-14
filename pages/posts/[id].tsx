@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import React from "react";
 
-import { useQuery, gql } from "@apollo/client";
-import Link from "next/link";
+import { gql } from "@apollo/client";
+// import Link from "next/link";
 import { initializeApollo } from "../../apollo/client";
 
 interface Iprops {
@@ -42,8 +42,6 @@ export async function getServerSideProps({ params }: any) {
     `,
   });
 
-  console.log(data);
-  dd
   return {
     props: {
       postId: params.id,
