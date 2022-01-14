@@ -15,10 +15,10 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
   return (
     <div className="relative">
       {/* better to keep pixelbox decouple from container so I can pass down styles */}
-      <div className="flex max-w-3xl text-center mx-auto mt-8 mb-16">
-        <PixelBox id="heading" className="p-9">
+      <div className="flex max-w-3xl text-center mx-auto mt-8 mb-16 sm:w-3/4">
+        <PixelBox id="heading" className="p-6 space-y-2">
           <p className="text-white text-xl">Hi, my name is</p>
-          <p className="text-green-dark dark:text-white text-4xl ">Miguel</p>
+          <p className="text-green-dark dark:text-white text-3xl ">Miguel</p>
         </PixelBox>
       </div>
 
@@ -49,6 +49,6 @@ export default Home;
 
 export async function getStaticProps() {
   return {
-    props: {}, // will be passed to the page component as props
+    props: {},
   };
 }
