@@ -26,15 +26,14 @@ const timeLineItem = (props: Props, index: number) => {
         })}
       >
         <PixelBox className="p-4 pt-8 sm:p-4 bg-white ">
-          <p className="text-lg">
-            {title} <span className="text-sm text-pink">{workingPeriod}</span>
-          </p>
+          <p className="text-lg">{title}</p>
+          <p className="text-sm text-pink py-2">{workingPeriod}</p>
           <p>{description}</p>
           <div>
             {tags.map((tag: string, index: number) => (
               <span
                 key={index}
-                className="inline-block bg-gray-100 rounded-2xl mt-2 px-3 py-1 text-sm font-semibold text-pink mr-2"
+                className="inline-block bg-gray-200 rounded-2xl mt-2 px-3 py-1 text-sm font-semibold text-pink mr-2"
               >
                 {tag}
               </span>

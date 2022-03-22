@@ -7,48 +7,51 @@ export interface ITimeLineProps {}
 const timeLine = [
   {
     id: "1",
-    title: "First",
-    description: "First description",
-    tags: ["first", "first-tag", "first-tag-1", "first-tag-2"],
-    workingPeriod: "2015 - 2017",
+    title: "Web Developer",
+    description:
+      "I started my career as a web developer in the early days of my university career. I worked on a variety of projects, from small to large, and I learned a lot about the different types of development I could do.",
+    tags: ["php", "MySQL", "javascrip", "c#", "jquery"],
+    workingPeriod: "2013 - 2014",
   },
   {
     id: "2",
-    title: "Second",
+    title: "Web Developer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    tags: ["first", "first-tag", "first-tag-1", "first-tag-2"],
-    workingPeriod: "2015 - 2017",
+      "I worked on a variety of projects but mainly focused on E-commerce frontend.",
+    tags: [
+      "Ruby on Rails",
+      "Angular",
+      "Ionic",
+      "MongoDB",
+      "Capistrano",
+      "Solr",
+      "Nginx",
+      "Chef",
+    ],
+    workingPeriod: "2015 - 2016",
   },
   {
     id: "3",
-    title: "Third",
-    description: "Third description",
-    tags: ["first", "first-tag", "first-tag-1", "first-tag-2"],
-    workingPeriod: "2015 - 2017",
+    title: "Web Developer",
+    description:
+      "Still working on E-commerce, but I am now focusing on services and API's.",
+    tags: ["Nodejs", "RoR", "AWS", "Jenkins", "Redis"],
+    workingPeriod: "2016 - 2017",
   },
   {
     id: "4",
-    title: "Fourth",
+    title: "React Native Developer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    tags: ["first", "first-tag", "first-tag-1", "first-tag-2"],
+      "Working on a React Native project for the same E-commerce company, I was able to learn a lot about React.",
+    tags: ["react", "web-pack", "rabitMQ", "redux", "redux-saga"],
     workingPeriod: "2015 - 2017",
   },
   {
     id: "5",
-    title: "Second",
+    title: "Software Engineer",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    tags: ["first", "first-tag", "first-tag-1", "first-tag-2"],
-    workingPeriod: "2015 - 2017",
-  },
-  {
-    id: "6",
-    title: "Second",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    tags: ["first", "first-tag", "first-tag-1", "first-tag-2"],
+      "Leading a team of developers on a project for a new company, I was able to learn a lot about the different types of development I could do.",
+    tags: ["React"],
     workingPeriod: "2015 - 2017",
   },
 ];

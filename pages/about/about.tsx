@@ -19,17 +19,14 @@ const About: NextPage<IProps> = function (props) {
         />
       </div>
       <h1 className="text-white py-3">About Me</h1>
-      <p className="text-pink leading-7 break-all">
-        Lorem ipsum dolor sit amet, vel te sumo definitionem, incorrupte
-        interesset in duo, facete voluptua appetere et mel. At mei apeirian
-        eleifend. Fabulas elaboraret ea sed. Prodesset appellantur delicatissimi
-        qui te, amet primis laboramus mel in. Eos ei eros nemore necessitatibus,
-        amet forensibus instructior est no. Lorem ipsum dolor sit amet, vel te
-        sumo definitionem, incorrupte interesset in duo, facete voluptua
-        appetere et mel. At mei apeirian eleifend. Fabulas elaboraret ea sed.
-        Prodesset appellantur delicatissimi qui te, amet primis laboramus mel
-        in. Eos ei eros nemore necessitatibus, amet forensibus instructior est
-        no.
+      <p className="text-pink leading-7 break-words">
+        Hello, my name is Miguel, and I am a software engineer. I graduated from
+        UP CDMX 2018 with a degree in Computer Science. My interests are in web
+        technologies and engineering, and I love to create beautiful, performant
+        products with fantastic user experiences. I previously worked at a
+        well-established E-commerce company where I led the early stages and
+        maturity of the platform. I build the project with another four
+        engineers over nine months on a Angular and RoR stack.
       </p>
       <TimeLine />
       {/* current location button with google maps pin */}
