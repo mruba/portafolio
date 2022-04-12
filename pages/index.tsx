@@ -6,6 +6,7 @@ import useTheme from "@components/useTheme";
 import { IHomeProps } from "types";
 import Astronaut from "@components/astronaut";
 import PixelBox from "@components/pixel-box";
+import Love from "@components/love";
 
 const Home: NextPage<IHomeProps> = function ({ options }) {
   const { theme: _theme, changeTheme } = useTheme();
@@ -29,6 +30,8 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
       />
 
       <Astronaut className="hidden absolute bottom-0 left-2/4 -translate-x-full pr-28  h-72 w-auto sm:block" />
+
+      <Love authorName="mruba" />
     </div>
   );
 };
