@@ -21,12 +21,11 @@ const About: NextPage<IProps> = function (props) {
       <h1 className="text-white py-3">About Me</h1>
       <p className="text-pink leading-7 break-words">
         Hello, my name is Miguel, and I am a software engineer. I graduated from
-        UP CDMX 2018 with a degree in Computer Science. My interests are in web
-        technologies and engineering, and I love to create beautiful, performant
-        products with fantastic user experiences. I previously worked at a
-        well-established E-commerce company where I led the early stages and
-        maturity of the platform. I build the project with another four
-        engineers over nine months on a Angular and RoR stack.
+        University in 2018 with a major in Computer Science. My interests are in
+        web technologies and engineering, and I love to create beautiful,
+        performant products with fantastic user experiences. I have been mainly
+        focusing on e-commerce during my career, and I have used all the hats in
+        order to build an end to end experience commerce platform.
       </p>
       <TimeLine />
       {/* current location button with google maps pin */}

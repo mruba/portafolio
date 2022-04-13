@@ -9,7 +9,7 @@ const timeLine = [
     id: "1",
     title: "Web Developer",
     description:
-      "I started my career as a web developer in the early days of my university career. I worked on a variety of projects, from small to large, and I learned a lot about the different types of development I could do.",
+      "I started my career as a web developer in the early days of my career. I worked on a variety of projects, from small to large companies, and I learned a lot about the different types of development I could do.",
     tags: ["php", "MySQL", "javascrip", "c#", "jquery"],
     workingPeriod: "2013 - 2014",
   },
@@ -17,7 +17,7 @@ const timeLine = [
     id: "2",
     title: "Web Developer",
     description:
-      "I worked on a variety of projects but mainly focused on E-commerce frontend.",
+      "I worked on a variety of projects but mainly focused on E-commerce frontend and devops.",
     tags: [
       "Ruby on Rails",
       "Angular",
@@ -27,6 +27,7 @@ const timeLine = [
       "Solr",
       "Nginx",
       "Chef",
+      "Grunt",
     ],
     workingPeriod: "2015 - 2016",
   },
@@ -34,8 +35,8 @@ const timeLine = [
     id: "3",
     title: "Web Developer",
     description:
-      "Still working on E-commerce, but I am now focusing on services and API's.",
-    tags: ["Nodejs", "RoR", "AWS", "Jenkins", "Redis"],
+      "I was still working on E-commerce, but I mainly focused on building scalable and reliable API's using RoR.",
+    tags: ["Nodejs", "RoR", "AWS", "Jenkins", "Redis", "Socket.io"],
     workingPeriod: "2016 - 2017",
   },
   {
@@ -51,8 +52,16 @@ const timeLine = [
     title: "Software Engineer",
     description:
       "Leading a team of developers on a project for a new company, I was able to learn a lot about the different types of development I could do.",
-    tags: ["React"],
-    workingPeriod: "2015 - 2017",
+    tags: ["React", "React Native"],
+    workingPeriod: "2017 - 2018",
+  },
+  {
+    id: "6",
+    title: "Seniot Software Engineer",
+    description:
+      "Leading a team of developers on a project for an International organization, I was able to learn a lot about the different types of development I could do.",
+    tags: ["React", "Golang", "Docker", "Nodejs", "Solr", "ElasticSearch"],
+    workingPeriod: "2018 - Current",
   },
 ];
 
