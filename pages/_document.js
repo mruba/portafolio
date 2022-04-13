@@ -5,6 +5,20 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta
+            property="title"
+            content="Miguel Rubalcava Software Engineer"
+            key="title"
+          />
+          <meta
+            name="description"
+            content="I am a software engineer, interested in web technologies and engineering, and I love to create beautiful, performant products with fantastic user experiences."
+          />
+          <meta name="robots" content="index" />
           <link
             href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
             rel="stylesheet"

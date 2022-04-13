@@ -6,6 +6,7 @@ import useTheme from "@components/useTheme";
 import { IHomeProps } from "types";
 import Astronaut from "@components/astronaut";
 import PixelBox from "@components/pixel-box";
+import Head from "next/head";
 
 const Home: NextPage<IHomeProps> = function ({ options }) {
   const { theme: _theme, changeTheme } = useTheme();
@@ -14,6 +15,9 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
   });
   return (
     <div className="relative">
+      <Head>
+        <title>Miguel Rubalcava Software Engineer</title>
+      </Head>
       {/* better to keep pixelbox decouple from container so I can pass down styles */}
       <div className="flex max-w-3xl text-center mx-auto mt-8 mb-16 sm:w-3/4">
         <PixelBox id="heading" className="p-6 space-y-2">
