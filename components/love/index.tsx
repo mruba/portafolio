@@ -9,7 +9,7 @@ export default class index extends PureComponent<Props> {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="stroke-2 h-7 w-7 inline -translate-y-1 fill-pink"
+        className="stroke-2 h-6 w-6 inline -translate-y-1 fill-red-dark"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -27,8 +27,8 @@ export default class index extends PureComponent<Props> {
 
     return (
       <div className="absolute -bottom-24 right-1/2 translate-x-1/2">
-        <p className="text-white text-m">
-          Made with {this.iconComponent()} {authorName}
+        <p className="text-white text-sm">
+          Made with {this.iconComponent()} by {authorName}
         </p>
       </div>
     );
