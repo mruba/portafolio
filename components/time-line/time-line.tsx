@@ -60,7 +60,16 @@ const timeLine = [
     title: "Seniot Software Engineer",
     description:
       "Leading a team of developers on a project for an International organization, I was able to learn a lot about the different types of development I could do.",
-    tags: ["React", "Golang", "Docker", "Nodejs", "Solr", "ElasticSearch"],
+    tags: [
+      "React",
+      "Golang",
+      "Docker",
+      "Nodejs",
+      "Solr",
+      "ElasticSearch",
+      "Nextjs",
+      "Graphql",
+    ],
     workingPeriod: "2018 - Current",
   },
 ];
