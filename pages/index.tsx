@@ -2,17 +2,12 @@ import type { NextPage } from "next";
 import React, { useEffect } from "react";
 import Menu from "@components/menu";
 import MenuOption from "@components/menu-option";
-import useTheme from "@components/useTheme";
 import { IHomeProps } from "types";
 import Astronaut from "@components/astronaut";
 import PixelBox from "@components/pixel-box";
 import Head from "next/head";
 
 const Home: NextPage<IHomeProps> = function ({ options }) {
-  const { theme: _theme, changeTheme } = useTheme();
-  useEffect(() => {
-    changeTheme("dark");
-  });
   return (
     <div className="relative">
       <Head>
@@ -41,7 +36,7 @@ const options = [
   { id: 0, label: "About Me", href: "/about" },
   { id: 1, label: "Projects", href: "/who" },
   { id: 2, label: "Blog", href: "/posts" },
-  { id: 3, label: "Configs", href: "/who" },
+  { id: 3, label: "Configs", href: "/config" },
   { id: 4, label: "Social", href: "/who" },
 ];
 
