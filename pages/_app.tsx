@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../styles/globals.css";
-import type { AppProps } from "next/app";
+import type { AppProps, NextWebVitalsMetric } from "next/app";
 import { useRouter } from "next/router";
 import { ApolloProvider } from "@apollo/client";
 import Layout from "@components/layout/layout";
@@ -32,5 +32,20 @@ const MyApp = function ({ Component, pageProps }: AppProps) {
     </ApolloProvider>
   );
 };
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  ga.event({
+    action: metric.name,
+    params: {
+      event_category:
+        metric.label === "web-vital" ? "Web Vitals" : "Custom metric",
+      value: Math.round(
+        metric.name === "CLS" ? metric.value * 1000 : metric.value
+      ),
+      event_label: metric.id,
+      non_interaction: true,
+    },
+  });
+}
 
 export default MyApp;
