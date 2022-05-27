@@ -17,7 +17,7 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
       <div className="flex max-w-3xl text-center mx-auto mt-8 mb-16 sm:w-3/4">
         <PixelBox id="heading" className="p-6 space-y-2">
           <p className="text-white text-xl">Hi, my name is</p>
-          <p className="text-green-dark dark:text-white text-3xl ">Miguel</p>
+          <p className="text-green-dark dark:text-white text-3xl">Miguel</p>
         </PixelBox>
       </div>
 
@@ -34,10 +34,8 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
 
 const options = [
   { id: 0, label: "About Me", href: "/about" },
-  { id: 1, label: "Projects", href: "/who" },
-  { id: 2, label: "Blog", href: "/posts" },
   { id: 3, label: "Configs", href: "/config" },
-  { id: 4, label: "Social", href: "/who" },
+  { id: 4, label: "Social", href: "/social-media" },
 ];
 
 Home.defaultProps = {

@@ -55,11 +55,6 @@ function Config({}: Props) {
           </div>
         ))}
       </div>
-      <Link href="/" passHref>
-        <div className="cursor-pointer text-xl text-blue dark:text-indigo hover:text-red dark:hover:text-green">
-          <p>Go Home</p>
-        </div>
-      </Link>
     </div>
   );
 }
