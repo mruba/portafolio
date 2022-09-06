@@ -10,7 +10,7 @@ const GoBack = () => {
   const router = useRouter();
   return (
     <div
-      className="p-2 absolute top-0 left-0 text-pink text-xl flex items-center dark:text-white cursor-pointer"
+      className="text-pink text-xl flex items-center dark:text-white cursor-pointer"
       onClick={() => router.back()}
     >
       <span>◀︎</span>
