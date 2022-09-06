@@ -25,8 +25,8 @@ const About: NextPage<IProps> = function (props) {
         University in 2018 with a major in Computer Science. I'm passionate
         about web technologies, and I love to create beautiful, performant user
         interfaces with fantastic UX. I have mainly focused on e-commerce during
-        my career, and I have used all the hats to build an end-to-end
-        experience commerce platforms.
+        my career, and I have used all the hats to build end-to-end experience
+        commerce platforms.
       </p>
       <TimeLine />
       {/* current location button with google maps pin */}
