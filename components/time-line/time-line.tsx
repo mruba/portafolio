@@ -9,7 +9,7 @@ const timeLine = [
     id: "1",
     title: "Web Developer",
     description:
-      "I started my career as a web developer in the early days of my career. I worked on a variety of projects, from small to large companies, and I learned a lot about the different types of development I could do.",
+      "I started my career as a web developer. I worked on a variety of projects, from small to large companies, and I learned a lot about the different types of development I could do.",
     tags: ["php", "MySQL", "javascrip", "c#", "jquery"],
     workingPeriod: "2013 - 2014",
   },
@@ -57,7 +57,7 @@ const timeLine = [
   },
   {
     id: "6",
-    title: "Seniot Software Engineer",
+    title: "Senior Software Engineer",
     description:
       "Leading a team of developers on a project for an International organization, I was able to learn a lot about the different types of development I could do.",
     tags: [
