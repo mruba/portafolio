@@ -10,7 +10,7 @@ const GoBack = () => {
   const router = useRouter();
   return (
     <div
-      className="text-pink text-xl flex items-center dark:text-white cursor-pointer"
+      className="sticky top-0 z-10 text-pink text-xl flex items-center dark:text-white cursor-pointer"
       onClick={() => router.back()}
     >
       <span>◀︎</span>
@@ -28,8 +28,10 @@ const Layout: React.FunctionComponent<ILayoutProps> = function (props) {
   return (
     <div className="dark:bg-black h-screen px-5 py-5 overflow-auto">
       {/* TODO: refactor this into a function to make it clean */}
-      {isHomePage && <GoBack />}
-      <div className="container mx-auto">{props.children}</div>
+      <div className="container mx-auto">
+        {isHomePage && <GoBack />}
+        {props.children}
+      </div>
     </div>
   );
 };

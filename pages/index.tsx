@@ -27,7 +27,7 @@ const Home: NextPage<IHomeProps> = function ({ options }) {
         optionComponent={MenuOption}
       />
 
-      <Astronaut className="hidden absolute bottom-0 left-2/4 -translate-x-full pr-28  h-72 w-auto sm:block" />
+      <Astronaut className="hidden absolute bottom-0 left-1/3 -translate-x-1/2   h-72 w-auto sm:block" />
     </div>
   );
 };
