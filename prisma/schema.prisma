@@ -32,3 +32,9 @@ model User {
   posts   Post[]
   profile Profile?
 }
+
+model Menu {
+  id    Int    @id @default(autoincrement())
+  label String @db.VarChar(255)
+  path  String
+}

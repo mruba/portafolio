@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import type { NextPage } from "next";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import TimeLine from "@components/time-line";
 import profilePic from "../../public/images/profile.png";
 
