@@ -10,9 +10,8 @@ import Children from "react-children-utilities";
 export default function Page({
   code,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const [mdxModule, setMdxModule] = useState();
-  const Content = mdxModule && mdxModule.default;
-
+  const [mdxModule, setMdxModule] = useState<any>();
+  const Content = mdxModule ? mdxModule.default : Fragment;
   useEffect(() => {
     (async () => {
       setMdxModule(await run(code, runtime));
@@ -20,24 +19,24 @@ export default function Page({
   }, [code]);
 
   const components = {
-    h1: (props) => <h1 className="text-4xl text-black" {...props} />,
-    pre: ({ children }) => {
-      const code = Children.onlyText(children);
-      return (
-        <CopyBlock
-          text={code}
-          language="typescript"
-          showLineNumbers
-          startingLineNumber
-          theme={dracula}
-          codeBlock
-        />
-      );
-    },
+    h1: (props: any) => <h1 className="text-4xl text-black" {...props} />,
+    // pre: ({ children }: any) => {
+    //   const code = Children.onlyText(children);
+    //   return (
+    //     <CopyBlock
+    //       text={code}
+    //       language="typescript"
+    //       showLineNumbers
+    //       startingLineNumber
+    //       theme={dracula}
+    //       codeBlock
+    //     />
+    //   );
+    // },
   };
   return (
     <div className="space-y-6">
-      {mdxModule && <Content components={components} />}
+      <Content />
     </div>
   );
 }
@@ -47,16 +46,17 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
 
   const dir = `lib/md-docs/${id}.md`.toString();
   const postsDirectory = path.join(process.cwd(), dir);
-  console.log(postsDirectory, id);
+
   try {
     const fileContents = await fs.readFile(postsDirectory, "utf8");
     const code = String(
       await compile(fileContents, {
         outputFormat: "function-body" /* …otherOptions */,
+        development: false,
       })
     );
     return { props: { code } };
   } catch (err) {
-    throw new Error(err);
+    throw new Error("Error during mdx compile");
   }
 }

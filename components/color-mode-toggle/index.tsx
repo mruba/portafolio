@@ -13,7 +13,7 @@ type Props = {
 function ColorModeToggle({ className }: Props): JSX.Element {
   const { theme: currentValue, changeTheme } = useTheme();
 
-  const onChangeTheme = (e) => {
+  const onChangeTheme = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     changeTheme(currentValue === "dark" ? "light" : "dark");
   };

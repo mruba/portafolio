@@ -29,7 +29,7 @@ module.exports = withMDX(
       });
       return config;
     },
-    pageExtensions: ["mdx", "tsx", "ts", "jsx", "js"],
+    pageExtensions: ["md", "mdx", "tsx", "ts", "jsx", "js"],
     images: {
       loader: "cloudinary",
       path: "https://res.cloudinary.com/mruba-media/image/upload",
