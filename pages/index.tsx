@@ -7,15 +7,7 @@ import Astronaut from "@components/astronaut";
 import PixelBox from "@components/pixel-box";
 import GlitchEffect from "@components/glitch-effect";
 import Head from "next/head";
-import {
-  Link,
-  DirectLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import { Element } from "react-scroll";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
 const Home: NextPage<IHomeProps> = function ({ options }) {

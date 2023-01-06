@@ -16,9 +16,16 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "react": ["./node_modules/@types/react"],
       "@components/*": ["components/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/graphql.js", "pages/posts/index.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/api/graphql.js",
+    "pages/posts/index.js"
+  ],
   "exclude": ["node_modules"]
 }
