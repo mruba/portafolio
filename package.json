@@ -43,6 +43,8 @@
     "react-children-utilities": "^2.8.0",
     "react-code-blocks": "^0.0.9-0",
     "react-dom": "^18.2.0",
+    "react-scroll": "^1.8.9",
+    "react-scroll-parallax": "^3.3.2",
     "use-sound": "^4.0.1"
   },
   "devDependencies": {

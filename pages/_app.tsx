@@ -6,6 +6,7 @@ import { ApolloProvider } from "@apollo/client";
 import Layout from "@components/layout/layout";
 import { useApollo } from "../apollo/client";
 import * as ga from "../lib/ga";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const MyApp = function ({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps.initialApolloState);
@@ -26,9 +27,11 @@ const MyApp = function ({ Component, pageProps }: AppProps) {
   }, [router.events]);
   return (
     <ApolloProvider client={client}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ParallaxProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ParallaxProvider>
     </ApolloProvider>
   );
 };

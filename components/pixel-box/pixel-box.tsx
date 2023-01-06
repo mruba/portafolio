@@ -14,8 +14,8 @@ export default function pixelateContainer({
   id,
 }: Props): ReactElement {
   return (
-    <div id={id} className={classnames(styles.container)}>
-      <div className={classnames(styles.wrapper, className)}>{children}</div>
+    <div id={id} className={classnames(styles.container, className)}>
+      <div className={classnames(styles.wrapper)}>{children}</div>
     </div>
   );
 }
