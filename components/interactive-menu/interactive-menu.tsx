@@ -43,7 +43,7 @@ const Navigation: React.FC<Props> = function (props) {
   return (
     <ul
       className={classNames(
-        "text-[0.65rem] md:text-xs z-50 justify-end items-center  flex text-white  h-14 sticky top-0 transition ease-in-out delay-150 duration-300",
+        "text-[0.65rem] md:text-xs z-50 justify-end items-center  flex text-white  h-14 sticky top-0 transition ease-in-out delay-150 duration-300 backdrop-blur-sm bg-black bg-opacity-50 shadow-md",
         { "-translate-y-14": !visible }
       )}
     >
