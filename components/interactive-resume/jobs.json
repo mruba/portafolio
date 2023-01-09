@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "company": "Bright Minds",
+    "position": "Web Developer",
+    "team": "Core Team",
+    "startDate": "2013-01-01T00:00:00-08:00",
+    "endDate": "2015-01-01T00:00:00-08:00",
+    "descriptions": [
+      "As part of a development team of 3, I was responsible for building and maintaining an application using a LAMP tech stack that displayed a catalog of speakers on the website and app.",
+      "Using PHP, I created an application that controlled access to an event using QR codes."
+    ]
+  },
+  {
+    "id": "2",
+    "company": "Retailer Company",
+    "position": "Web Developer",
+    "team": "Dev Team",
+    "startDate": "2015-01-01T00:00:00-08:00",
+    "endDate": "2016-01-01T00:00:00-08:00",
+    "descriptions": [
+      "In my role as a developer, I built and maintained an e-commerce application using AngularJS and a Ruby on Rails backend API. I also had the opportunity to learn about CI/CD and DevOps practices.",
+      "I contributed to the company's success by creating a cross-platform mobile app for iOS and Android using React Native and consuming existing API services. By not having to build a native app from scratch, the company was able to save $100,000, and sales increased by 20% in the first month."
+    ]
+  },
+  {
+    "id": "3",
+    "company": "Retailer Company",
+    "position": "Software Engineer",
+    "team": "Core Team",
+    "startDate": "2016-01-01T00:00:00-08:00",
+    "endDate": "2017-01-01T00:00:00-08:00",
+    "descriptions": [
+      "To improve efficiency in the call center, I created a platform that used a data-driven architecture to enable agents to review and submit orders for customers in real time. Time spend on the phone was reduced by 30%."
+    ]
+  },
+  {
+    "id": "4",
+    "company": "Retailer Company",
+    "position": "Software Engineer",
+    "team": "UI Team",
+    "startDate": "2017-01-01T00:00:00-08:00",
+    "endDate": "2018-01-01T00:00:00-08:00",
+    "descriptions": [
+      "As the lead of a team of 4 developers, I was responsible for building cross-platform mobile apps for iOS and Android using React Native. Our efforts paid off, resulting in a 35% increase in sales after the launch."
+    ]
+  },
+  {
+    "id": "5",
+    "company": "Walmart Labs",
+    "position": "Software Engineer",
+    "team": "International Team",
+    "startDate": "2018-01-01T00:00:00-08:00",
+    "endDate": "2019-01-01T00:00:00-08:00",
+    "descriptions": [
+      "I led a team of 5 in building a front-end application using React and Redux for Walmart, enabling them to sell products internationally. We completed the project in 6 months and launched it within 3 months."
+    ]
+  },
+  {
+    "id": "6",
+    "company": "Walmart Labs",
+    "position": "Software Engineer II",
+    "team": "International Team",
+    "startDate": "2019-01-01T00:00:00-08:00",
+    "endDate": "2021-01-01T00:00:00-08:00",
+    "descriptions": [
+      "As the leader of a team of 5, I oversaw the development of a Backend for Frontend (BFF) using Golang and the Gin Framework to improve the efficiency of creating and managing content on the site using a new CMS."
+    ]
+  },
+  {
+    "id": "7",
+    "company": "Walmart Labs",
+    "position": "Staff Software Engineer",
+    "team": "International Team",
+    "startDate": "2021-01-01T00:00:00-08:00",
+    "endDate": "2021-01-01T00:00:00-08:00",
+    "descriptions": [
+      "Using GraphQL, React, and Node.js, I directed a team of 5 developers in building a new platform for international"
+    ]
+  },
+  {
+    "id": "8",
+    "company": "Walmart Labs",
+    "position": "Staff Software Engineer",
+    "team": "Backbone Team",
+    "startDate": "2021-01-01T00:00:00-08:00",
+    "endDate": "2022-01-01T00:00:00-08:00",
+    "descriptions": [
+      "I led a team of 3 developers in building a chat bot using React and Node.js to facilitate communication between customers and Walmart customer care."
+    ]
+  }
+]

@@ -45,6 +45,7 @@
     "react-dom": "^18.2.0",
     "react-scroll": "^1.8.9",
     "react-scroll-parallax": "^3.3.2",
+    "tinytime": "^0.2.6",
     "use-sound": "^4.0.1"
   },
   "devDependencies": {

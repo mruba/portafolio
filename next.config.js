@@ -34,5 +34,15 @@ module.exports = withMDX(
       loader: "cloudinary",
       path: "https://res.cloudinary.com/mruba-media/image/upload",
     },
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "res.cloudinary.com",
+          port: "",
+          pathname: "/mruba-media/**",
+        },
+      ],
+    },
   })
 );
