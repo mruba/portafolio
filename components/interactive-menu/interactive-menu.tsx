@@ -43,7 +43,7 @@ const Navigation: React.FC<Props> = function (props) {
   return (
     <ul
       className={classNames(
-        "z-50 justify-end items-center text-xs flex text-white  h-14 sticky top-0 transition ease-in-out delay-150 duration-300",
+        "text-[0.65rem] md:text-xs z-50 justify-end items-center  flex text-white  h-14 sticky top-0 transition ease-in-out delay-150 duration-300",
         { "-translate-y-14": !visible }
       )}
     >
@@ -51,7 +51,7 @@ const Navigation: React.FC<Props> = function (props) {
         <li className="" key={section.id}>
           <Link
             to={section.id}
-            className="cursor-pointer p-4"
+            className="cursor-pointer p-2 md:p-4"
             activeClass="text-pink"
             spy
             smooth
@@ -61,7 +61,7 @@ const Navigation: React.FC<Props> = function (props) {
           </Link>
         </li>
       ))}
-      <li className="px-4">Resume</li>
+      <li className="hidden md:block px-4">Resume</li>
     </ul>
   );
 };

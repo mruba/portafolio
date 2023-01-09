@@ -16,17 +16,19 @@ const Home: NextPage<IHomeProps> = function () {
         <title>Miguel Rubalcava Software Engineer</title>
       </Head>
 
-      <section className="mx-auto  h-screen min-h-screen flex justify-center flex-col items-start">
-        <p className="text-indigo text-base">Hey there! My name is</p>
+      <section className="mx-auto md:h-screen min-h-screen flex justify-center flex-col items-start">
+        <p className="text-sm md:text-base text-indigo ">
+          Hey there! My name is
+        </p>
         <GlitchEffect
           text="Miguel Rubalcava."
-          className="text-pink text-4xl pt-5 leading-normal"
+          className="text-2xl md:text-4xl text-pink  pt-5 leading-normal"
         />
 
-        <p className="text-grey-light text-4xl pt-5 leading-normal">
+        <p className="text-sm md:text-4xl text-grey-light  pt-5 leading-normal">
           I build stuff for the world wide web.
         </p>
-        <p className="text-grey-light text-sm pt-5 leading-normal">
+        <p className="text-sm md:text-sm text-grey-light  pt-5 leading-normal">
           I'm a digital wizard! I wave my magic coding wand and poof a website
           appears. Okay, maybe it's not quite that easy, but I do have a knack
           for turning a bunch of random code into something beautiful and
@@ -39,10 +41,18 @@ const Home: NextPage<IHomeProps> = function () {
 
       <Element
         name="about"
-        className="element mx-auto  h-screen min-h-screen flex justify-center flex-col items-start"
+        className="element mx-auto md:h-screen min-h-screen flex justify-center flex-col items-start"
       >
         <h3 className="text-pink-light text-xl pb-8">About Me</h3>
-        <div className="flex">
+        <div className="flex flex-col md:flex-row-reverse">
+          <Image
+            src="https://res.cloudinary.com/mruba-media/image/upload/c_crop,h_1000,w_1000,x_100,y_80/v1673202673/Miguel-47_mr5hcx.jpg"
+            width={256}
+            height={256}
+            className="rounded-full m-8 md:w-64 md:h-64 md:ml-5"
+            alt="Miguel Rubalcava Avatar"
+          />
+
           <p className="text-grey-light text-sm leading-8 break-words">
             Hi there! My name is Miguel, and I am a skilled Software Engineer
             with a strong foundation in computer science.
@@ -61,20 +71,12 @@ const Home: NextPage<IHomeProps> = function () {
             I am always looking for new challenges and opportunities to expand
             my expertise and grow as a SE.
           </p>
-
-          <Image
-            src="https://res.cloudinary.com/mruba-media/image/upload/c_crop,h_1000,w_1000,x_100,y_80/v1673202673/Miguel-47_mr5hcx.jpg"
-            width={256}
-            height={256}
-            className="rounded-full w-64 h-64 ml-5"
-            alt="Miguel Rubalcava Avatar"
-          />
         </div>
       </Element>
 
       <Element
         name="experience"
-        className="element mx-auto  h-screen min-h-screen flex justify-center flex-col items-start"
+        className="pt-24 md:pt-0 mx-auto md:h-screen min-h-screen flex justify-center flex-col items-start "
       >
         <h3 className="text-pink-light text-xl pb-12">Experience</h3>
         <InteractiveResume />
@@ -82,7 +84,7 @@ const Home: NextPage<IHomeProps> = function () {
 
       <Element
         name="work"
-        className="element mx-auto  h-screen min-h-screen flex justify-center flex-col items-start"
+        className="element mx-auto md:h-screen min-h-screen flex justify-center flex-col items-start"
       >
         <ParallaxBanner
           layers={[
@@ -106,7 +108,7 @@ const Home: NextPage<IHomeProps> = function () {
 
       <Element
         name="contact"
-        className="element mx-auto  h-screen min-h-screen flex justify-center flex-col items-start"
+        className="element mx-auto  md:h-screen min-h-screen flex justify-center flex-col items-start"
       >
         <h3 className="text-pink-light text-xl pb-8">Contact</h3>
         <p className="text-grey-light text-sm leading-8 break-words">
