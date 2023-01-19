@@ -44,12 +44,12 @@ const Home: NextPage<IHomeProps> = function () {
         className="element mx-auto md:h-screen min-h-screen flex justify-center flex-col items-start"
       >
         <h3 className="text-pink-light text-xl pb-8">About Me</h3>
-        <div className="flex flex-col md:flex-row-reverse">
+        <div className="">
           <Image
             src="https://res.cloudinary.com/mruba-media/image/upload/c_crop,h_1000,w_1000,x_100,y_80/v1673202673/Miguel-47_mr5hcx.jpg"
             width={256}
             height={256}
-            className="rounded-full m-8 md:w-64 md:h-64 md:ml-5"
+            className="rounded-full float-none mr-auto mb-8 md:mb-8 md:ml-8 md:w-64 md:h-64 md:float-right"
             alt="Miguel Rubalcava Avatar"
           />
 
